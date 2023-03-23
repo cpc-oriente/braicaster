@@ -3,10 +3,13 @@
 > CONVERSOR CONTROLLER
 ============================================= */
 const ctr_conv = {
+
+	// ARRANQUE ===========>
 	start:(btn)=>{
 		// Arranque inicial
 		$("#"+btn).click();
 	},
+	// TABS ===========>
 	tabs:(obj) => {
 		// INDENTIFICACIÓN
 		id_obj = obj.target.getAttribute("id")
@@ -20,6 +23,15 @@ const ctr_conv = {
 		// Enceder tab
 		$(tab).show();
 	},
+	// LINKS ===========>
+	active_link:(btn_nav) => {
+		console.log("btn_nav", btn_nav);
+		// Limpiar botones
+		$(".nav-btn").removeClass("active")
+		// Agregar Clase Boton
+		$("#"+btn_nav).addClass("active")
+	},
+	// CONVERTIR A BRAILE ===========>
 	convert_to_braille:()=>{
 		// Tomar Valor Input
 		text = $("#txtarea-conversor-txabr").val();
@@ -36,6 +48,7 @@ const ctr_conv = {
 			</p>`
 		);
 	},
+	// CONVERTIR A TEXTO ===========>
 	convert_to_text:()=>{
 		// Tomar Valor Input
 		text = $("#txtarea-conversor-bratx").val();
@@ -51,18 +64,23 @@ const ctr_conv = {
 				<span class="txt_effect"></span> 
 			</p>`
 		);
-	}
+	},
 }
 /** =================================================
  * 	JQUERY START >
  *  ================================================= */
 $(document).ready(function(){
+	
 	// AGREGAR EVENTOS TABS
 	$(".btn-check").on("click", (event)=>ctr_conv.tabs(event));
+	
 	// BTN TEXTO A BRAILE
-	$("#txtarea-conversor-txabr").on("keyup", (event)=>ctr_conv.convert_to_braille(event))
+	$("#txtarea-conversor-txabr").on("keyup", (event)=>ctr_conv.convert_to_braille(event));
+	
 	// BTN BRAILE A TEXTO
-	$("#btn-conversor-bratx").on("click", (event)=>ctr_conv.convert_to_text(event))
+	$("#btn-conversor-bratx").on("click", (event)=>ctr_conv.convert_to_text(event));
+
 	// OBJETO CONTROLADOR >
 	ctr_conv.start("btnradio1");
+
 })

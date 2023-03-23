@@ -1,13 +1,15 @@
 /**
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  * braille
  * https://github.com/Nonemoticoner/braille
- *
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ * Modify: @Jok4r_DeVs
+ *>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  * Copyright (c) 2015-2018 Nonemoticoner
  * Licensed under the MIT license.
- * 
- * Modify: @Jok4r_DeVs
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  */
-
+// OBJETO LETRAS BRAILE
 var BRAILLE = {
   ' ': '⠀',   // space bar to dot-0
   '_': '⠸',
@@ -74,7 +76,7 @@ var BRAILLE = {
   ')': '⠾',
   '=': '⠿'
 }
-
+// OBJETO COMP ASCII
 ASCII = {
   ' ': ' ',   // space bar to space bar
   '⠀': ' ',   // dot-0 to space bar
@@ -155,6 +157,7 @@ module_convert = {
   },
   // CONVERSOR TEXTO A BRAILLE
   toBraille: function (text) {
+      
       var upperText, upperTextLength, brailleText, i;
 
       upperText = text.toUpperCase();

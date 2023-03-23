@@ -68,3 +68,7 @@ span.txt_effect {
 @keyFrames blink {
  50% { border-color: transparent}
 }
+
+.active-link{
+  color: #ffffff!important;
+}
