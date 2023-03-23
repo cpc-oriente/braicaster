@@ -4,6 +4,8 @@
  *
  * Copyright (c) 2015-2018 Nonemoticoner
  * Licensed under the MIT license.
+ * 
+ * Modify: @Jok4r_DeVs
  */
 
 var BRAILLE = {
@@ -144,6 +146,7 @@ ASCII = {
 module_convert = {
   // COMPRARDOR CARACTERES 
   convert: function (character) {
+      // return !!BRAILLE[character] ? BRAILLE[character] : '?';
       return !!BRAILLE[character] ? BRAILLE[character] : '?';
   },
   // COMPARADOR SIMBOLOS
@@ -166,16 +169,16 @@ module_convert = {
   },
   // CONVERSOR BRAILLE A TEXTO
   toText: function (code) {
-      var codeLength, asciiText, i;
+    var codeLength, asciiText, i;
 
-      codeLength = code.length;
-      asciiText = '';
+    codeLength = code.length;
+    asciiText = '';
 
-      for (i = 0; i < codeLength; i++) {
-          asciiText += this.read(code[i]);
-      }
+    for (i = 0; i < codeLength; i++) {
+        asciiText += this.read(code[i]);
+    }
 
-      return asciiText;
+    return asciiText;
   }
 
 };

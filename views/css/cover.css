@@ -48,3 +48,23 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
+
+
+span.txt_effect {
+  display: inline;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid;
+  animation: blink .5s infinite step-end alternate;
+  overflow: hidden;
+/*  animation-fill-mode: forwards;*/
+}
+
+@keyFrames typing {
+  from { width: 0}
+  to {width: 1px}
+}
+
+@keyFrames blink {
+ 50% { border-color: transparent}
+}
